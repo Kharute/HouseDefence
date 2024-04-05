@@ -127,7 +127,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnSkill(InputValue inputValue)
     {
-        if(inputValue.)
+        
     }
 }
 
