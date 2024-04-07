@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -6,30 +7,57 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    private SpriteRenderer pSprite;
+
+    public Transform hitBox;
+    public Vector2 hitBoxSize;
+    
+    
+    public int damage = 1;
+
+    [Header("Movement Valriables")]
     private Rigidbody2D pRb;
+    private Vector2 moveVector;
+    public float jumpForce = 300.0f;
+    public float moveSpeed = 8.0f;
+
+    [Header("Animation Check")]
     private Animator pAni;
+    bool isGrounded = false;
+    bool IsFastRun = false;
+    bool IsRun = false;
+
+    [Header("Dash Valriables")]
+    [SerializeField] bool canDash = true;
+    [SerializeField] bool isDashing;
+    [SerializeField] float dashPower;
+    [SerializeField] float dashTime;
+    [SerializeField] float dashCooldown;
+    private TrailRenderer dashTrail;
+    [SerializeField] float dashGravity;
+    private float normalGravity;
+    private float waitTime = 0.5f;
+
+    //------------------------------------------
+    private SpriteRenderer pSprite;
 
     private int jumpCount = 0;
-    public float moveSpeed = 8.0f;
-    public float jumpForce = 300.0f;
     private Vector2 inputMovement = Vector2.zero;
-    bool IsRun = false;
-    bool IsFastRun = false;
-    bool isGrounded = false;
 
     private int currentAttack = 1;
     private float timeSinceAttack = 0.6f;
+    private float DashCoolDown = 0.5f;
 
     private void Awake()
     {
         pSprite = GetComponent<SpriteRenderer>();
         pRb = GetComponent<Rigidbody2D>();
         pAni = GetComponent<Animator>();
+        dashTrail = GetComponent<TrailRenderer>();
+        normalGravity = pRb.gravityScale;
+        
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         timeSinceAttack += Time.deltaTime;
 
@@ -40,30 +68,39 @@ public class PlayerController : MonoBehaviour
 
         if (inputMovement.x == 0)
         {
-            IsRun = false;
-            pAni.SetBool("Run", IsRun);
-        }
-        if (Input.GetKeyUp("left shift"))
-        {
-            IsFastRun = false;
-            pAni.SetBool("FastRun", IsFastRun);
+            
         }
     }
 
     //이동
-    private void OnMove(InputValue inputValue)
+    public void OnMove(InputAction.CallbackContext context)
     {
-        inputMovement = inputValue.Get<Vector2>();
-        pSprite.flipX = inputMovement.x == -1;
+        inputMovement = context.ReadValue<Vector2>();
 
-        IsRun = true;
-        pAni.SetBool("Run", IsRun);
+        if (context.started)
+        {
+            pSprite.flipX = inputMovement.x == -1;
+            /*if (canDash)
+            {
+                Dash();
+            }*/
+            IsRun = true;
+            pAni.SetBool("Run", IsRun);
+        }
+        else if (context.canceled)
+        {
+            IsRun = false;
+            pAni.SetBool("Run", IsRun);
+        }
+    }
+    public void Dash(InputAction.CallbackContext context)
+    {
+        StartCoroutine(Dash());
     }
 
-    // 점프
-    void OnJump(InputValue inputValue)
+    public void OnJump(InputAction.CallbackContext context)
     {
-        if(inputValue.isPressed)
+        if (context.started)
         {
             if (jumpCount < 2)
             {
@@ -79,16 +116,50 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
+    //대시 -> wait 걸고 -> 대시 해제 및 반환 식의 코루틴
+    IEnumerator Dash()
+    {
+        canDash = false;
+        isDashing = true;
+        float originalGravity = pRb.gravityScale;
+        pRb.gravityScale = 0;
+        pRb.velocity = new Vector2(transform.localScale.x * dashPower, 0);
+        dashTrail.emitting = true;
+        yield return new WaitForSeconds(dashTime);
+        dashTrail.emitting = false;
+        pRb.gravityScale = originalGravity;
+        isDashing = false;
+        yield return new WaitForSeconds(dashCooldown);
+        canDash = true;
+    }
+
+    //context.started (시작 시)
+    //context.performed (작동 시)
+    //context.canceled (중단 시)
+    // 점프
+    
+
     //공격
     // 공격 동안만 이동속도 반으로 감소
-    void OnAttack(InputValue inputValue)
+    public void OnAttack(InputAction.CallbackContext context)
     {
-        if(inputValue.isPressed && timeSinceAttack > 0.25f)
+        if(context.started&& timeSinceAttack > 0.25f)
         {
             currentAttack++;
             
             if (currentAttack > 3 || timeSinceAttack > 0.6f)
                 currentAttack = 1;
+
+            Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(hitBox.position, hitBoxSize, 0);
+            foreach(Collider2D item in collider2Ds)
+            {
+                if (item.tag =="Enemy")
+                {
+                    item.GetComponent<Enemy>().TakeDamage(damage);
+                    Debug.Log($"{item.name}이 맞음");
+                }
+            }
 
             pAni.SetTrigger("Attack" + currentAttack);
             timeSinceAttack = 0.0f;
@@ -97,11 +168,16 @@ public class PlayerController : MonoBehaviour
 
 
     //달리기
-    void OnFastRun(InputValue inputValue)
+    public void OnFastRun(InputAction.CallbackContext context)
     {
-        if(inputValue.isPressed)
+        if(context.started)
         {
             IsFastRun = true;
+            pAni.SetBool("FastRun", IsFastRun);
+        }
+        else if(context.canceled)
+        {
+            IsFastRun = false;
             pAni.SetBool("FastRun", IsFastRun);
         }
     }
@@ -125,21 +201,15 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    private void OnSkill(InputValue inputValue)
+    //히트박스 관전 기즈모
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireCube(hitBox.position, hitBoxSize);
+    }
+
+    public void OnSkill(InputAction.CallbackContext context)
     {
         
     }
 }
-
-/*
- 오느레가제
-1. 쓰고싶은 키를 바인딩
-2. 캐릭터를 상하좌우로 움직여보자.
-ㄴ 상태에 따른 애니메이션
-3. 타일맵을 사용해서 맵을 찍는다.
-
-4. 점프 있으면 점프
-4. 장애물 있으면 밀 것.
-5. 코인
-
- */
