@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Enemy
   - Platform
+  - Teleport
+  - Structure
   layers:
   - Default
   - TransparentFX
@@ -13,9 +15,9 @@ TagManager:
   - 
   - Water
   - UI
-  - Flatform
-  - 
-  - 
+  - Platform
+  - Player
+  - Structure
   - 
   - 
   - 
@@ -42,4 +44,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1391128865
+    locked: 0
+  - name: Midground
+    uniqueID: 4104415747
+    locked: 0
+  - name: Foreground
+    uniqueID: 443031943
     locked: 0
