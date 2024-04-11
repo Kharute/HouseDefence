@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
+using Pathfinding;
 
 public class Enemy : MonoBehaviour
 {
+    public AIPath aIPath;
+
     Animator ani;
     Rigidbody2D rb;
     SpriteRenderer sr;
@@ -22,7 +25,17 @@ public class Enemy : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         isRight = sr.flipX;
     }
+    private void Update()
+    {
+        /*if(aIPath.desiredVelocity.x >= 0.01f)
+        {
+            transform.localScale = new Vector3(-1f, 1f, 1f);
+        }else if(aIPath.desiredVelocity.x <= -0.01f)
+        {
+            transform.localScale = new Vector3(1f, 1f, 1f);
+        }*/
 
+    }
     public void TakeDamage(int damage)
     {
         HP -= damage;
@@ -36,7 +49,8 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            rb.AddForce(new Vector2(knockBackPower * (isRight? -1 : 1), knockBackPower));
+            //³Ë¹éÀÎµ¥ ÇöÀç ¾È¸ÔÈû
+            //rb.AddForce(new Vector2(knockBackPower * (isRight? -1 : 1), knockBackPower));
         }
     }
     private void EnemyDeath()

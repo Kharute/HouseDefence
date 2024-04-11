@@ -34,6 +34,7 @@ public class EnemyMove : MonoBehaviour
         float moveInt = isMove ? -0.5f : 0;
         if (isMove)
         {
+            //Vector3.Lerp(transform.position, dirPos, speed);
             rb.velocity = new Vector2(rb.velocity.x + moveInt * moveSpeed * Time.deltaTime, rb.velocity.y);
         }
     }

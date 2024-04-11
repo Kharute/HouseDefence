@@ -145,7 +145,6 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log($"{e} : 범위 벗어남");
         }
-        
     }
 
     //context.started (시작 시)
