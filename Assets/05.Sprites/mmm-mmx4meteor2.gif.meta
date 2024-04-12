@@ -1,0 +1,430 @@
+fileFormatVersion: 2
+guid: 50090cde802652a43a33fc62281651f4
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: mmm-mmx4meteor2_02
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 232
+        width: 115
+        height: 115
+      alignment: 9
+      pivot: {x: 0.41039667, y: 0.38052872}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73712b647a550dd44b1fa8eb9e8e4d63
+      internalID: 1677367873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mmm-mmx4meteor2_03
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 231
+        width: 87
+        height: 116
+      alignment: 9
+      pivot: {x: 0.49012986, y: 0.39636362}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 415c602df817cab488b0009d4bc64f10
+      internalID: -1145171601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mmm-mmx4meteor2_13
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 232
+        width: 115
+        height: 115
+      alignment: 9
+      pivot: {x: 0.29092553, y: 0.38799572}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e43edede9a6b08d4fb86013527ec0d53
+      internalID: -1174617202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mmm-mmx4meteor2_11
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 232
+        width: 115
+        height: 115
+      alignment: 9
+      pivot: {x: 0.3058595, y: 0.32826006}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 106c380554526cc44a07a0e985b5c699
+      internalID: -42026428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mmm-mmx4meteor2_01
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 231
+        width: 98
+        height: 116
+      alignment: 9
+      pivot: {x: 0.43866435, y: 0.37415603}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9081d7933729e648b6b491a397500cd
+      internalID: 440812006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mmm-mmx4meteor2_04
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 118
+        width: 110
+        height: 115
+      alignment: 9
+      pivot: {x: 0.46824756, y: 0.46266532}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c9112be1a2be3941be44c6d3f3cd325
+      internalID: -1063312365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mmm-mmx4meteor2_06
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 117
+        width: 83
+        height: 116
+      alignment: 9
+      pivot: {x: 0.6034576, y: 0.46298692}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b05ccafe70143994291b8863a5f28471
+      internalID: -124656920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mmm-mmx4meteor2_07
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 116
+        width: 85
+        height: 116
+      alignment: 9
+      pivot: {x: 0.5202044, y: 0.47038954}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d073a8bb0b17791458473ca4d581def2
+      internalID: -523735907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mmm-mmx4meteor2_08
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 116
+        width: 80
+        height: 116
+      alignment: 9
+      pivot: {x: 0.5107334, y: 0.48519477}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ef1d6d122f975f478fa26d6db9d0b79
+      internalID: 2013099549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mmm-mmx4meteor2_05
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 117
+        width: 113
+        height: 116
+      alignment: 9
+      pivot: {x: 0.3708153, y: 0.4481818}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99b3b160410a0074b88067429f814171
+      internalID: -113694745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mmm-mmx4meteor2_09
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 1
+        width: 100
+        height: 116
+      alignment: 9
+      pivot: {x: 0.43989122, y: 0.4703896}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06f808c00a2f9b347bd197c42f0f9155
+      internalID: -520325895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mmm-mmx4meteor2_10
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 1
+        width: 113
+        height: 116
+      alignment: 9
+      pivot: {x: 0.3100224, y: 0.40376645}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 085236e8eb10d2749998d29acb0bc3d7
+      internalID: -507808881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mmm-mmx4meteor2_12
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 1
+        width: 115
+        height: 116
+      alignment: 9
+      pivot: {x: 0.31332636, y: 0.40376645}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ebcaaa3d11166345822c31c4d505f0b
+      internalID: -170358427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      mmm-mmx4meteor2_01: 440812006
+      mmm-mmx4meteor2_02: 1677367873
+      mmm-mmx4meteor2_03: -1145171601
+      mmm-mmx4meteor2_04: -1063312365
+      mmm-mmx4meteor2_05: -113694745
+      mmm-mmx4meteor2_06: -124656920
+      mmm-mmx4meteor2_07: -523735907
+      mmm-mmx4meteor2_08: 2013099549
+      mmm-mmx4meteor2_09: -520325895
+      mmm-mmx4meteor2_10: -507808881
+      mmm-mmx4meteor2_11: -42026428
+      mmm-mmx4meteor2_12: -170358427
+      mmm-mmx4meteor2_13: -1174617202
+      mmm-mmx4meteor2_15: -237705654
+      mmm-mmx4meteor2_17: 995704847
+      mmm-mmx4meteor2_19: 1105096868
+      mmm-mmx4meteor2_20: -1668903759
+      mmm-mmx4meteor2_21: 759694882
+      mmm-mmx4meteor2_23: -340922745
+      mmm-mmx4meteor2_24: -583043774
+      mmm-mmx4meteor2_25: -814323301
+      mmm-mmx4meteor2_26: 1200249164
+      mmm-mmx4meteor2_27: 1762735452
+      mmm-mmx4meteor2_28: -1243130464
+      mmm-mmx4meteor2_29: -1022376880
+      mmm-mmx4meteor2_30: 405088397
+      mmm-mmx4meteor2_32: -693246533
+      mmm-mmx4meteor2_33: -944574948
+      mmm-mmx4meteor2_37: -1247892664
+      mmm-mmx4meteor2_39: -684394459
+      mmm-mmx4meteor2_40: 2029463478
+      mmm-mmx4meteor2_41: 229886956
+      mmm-mmx4meteor2_42: -803261961
+      mmm-mmx4meteor2_43: -1303295914
+      mmm-mmx4meteor2_44: -426278277
+      mmm-mmx4meteor2_45: -650040451
+      mmm-mmx4meteor2_46: 1641265904
+      mmm-mmx4meteor2_47: 2028966860
+      mmm-mmx4meteor2_48: 1566905269
+      mmm-mmx4meteor2_51: -1558059370
+      mmm-mmx4meteor2_52: -1704203252
+      mmm-mmx4meteor2_53: 2002677275
+      mmm-mmx4meteor2_6: -2142856357
+      mmm-mmx4meteor2_7: 1022483897
+      mmm-mmx4meteor2_8: -1927546271
+      mmm-mmx4meteor2_9: -1134717571
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
