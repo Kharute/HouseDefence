@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private int currentHP;
-    public int MaxHP = 200;
+    public float currentHP;
+    public float MaxHP = 200;
     public HealthBar healthBar;
 
     private void Start()
@@ -34,7 +34,11 @@ public class Player : MonoBehaviour
     {
         currentHP -= damage;
     }
+    public void Heal(float heal)
+    {
+        if(currentHP < MaxHP)
+            currentHP += heal;
+    }
 
-    
 }
 

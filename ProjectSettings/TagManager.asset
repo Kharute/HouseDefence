@@ -10,6 +10,8 @@ TagManager:
   - Structure
   - Skill
   - EnemyStructure
+  - HealZone
+  - Button
   layers:
   - Default
   - TransparentFX

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5590294744808701456}
   - component: {fileID: 4800921020696194843}
   - component: {fileID: 9133433937016396824}
-  - component: {fileID: 3221255859073048388}
+  - component: {fileID: 5964153514354567473}
   m_Layer: 10
   m_Name: Enemy_Grasshopper
   m_TagString: Enemy
@@ -34,7 +34,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7946497435413519120}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -124,7 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 3
-  enemyAtk: 50
+  enemyAtk: 20
   knockBackPower: 200
   isLive: 1
   isRight: 0
@@ -203,7 +204,7 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
---- !u!114 &3221255859073048388
+--- !u!114 &5964153514354567473
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -212,10 +213,75 @@ MonoBehaviour:
   m_GameObject: {fileID: 409270765008136466}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 439b6e76f3a9152429b2bddad1a12a6a, type: 3}
+  m_Script: {fileID: 11500000, guid: 99696779a1b82a9429004033eafb4b38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   AllObjects: []
   nearestObj: {fileID: 0}
   speed: 300
   nextWaypointDistance: 3
+  jumpForce: 50
+  checkDistance: 3
+  isChasing: 0
+  force: {x: 0, y: 0}
+--- !u!1 &2832626962506345860
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7946497435413519120}
+  - component: {fileID: 8497566654070859437}
+  - component: {fileID: 6631369304381154100}
+  m_Layer: 10
+  m_Name: EnemySenser
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7946497435413519120
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2832626962506345860}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 409270765008136495}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &8497566654070859437
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2832626962506345860}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 7
+--- !u!114 &6631369304381154100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2832626962506345860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 619ec7b850b301e41add928ad32f206d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

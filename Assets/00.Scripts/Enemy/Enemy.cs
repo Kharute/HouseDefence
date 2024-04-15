@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour
         else
         {
             //≥ÀπÈ¿Œµ• «ˆ¿Á æ»∏‘»˚
-            //rb.AddForce(new Vector2(knockBackPower * (isRight? -1 : 1), knockBackPower));
+            rb.AddForce(new Vector2(knockBackPower * (isRight? -1 : 1), knockBackPower));
         }
     }
     private void EnemyDeath()

@@ -7,10 +7,14 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    public Slider slider;
+    Slider slider;
     public Gradient gradient;
     public Image fill;
 
+    private void Awake()
+    {
+        slider = GetComponent<Slider>();
+    }
     public void SetMaxHealth(float health)
     {
         slider.maxValue = health;

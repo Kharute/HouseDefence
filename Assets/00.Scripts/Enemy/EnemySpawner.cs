@@ -14,7 +14,7 @@ public class EnemySpawner : MonoBehaviour
     {
         for (int i = 0; i < m_Count; i++)
         {
-            int e_rand = Random.Range(0, prefabs.Length - 1);
+            int e_rand = Random.Range(0, prefabs.Length);
             GameObject m_object = Instantiate(prefabs[e_rand]);
             m_object.transform.position = transform.position;
 
