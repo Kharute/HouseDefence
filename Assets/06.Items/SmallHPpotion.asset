@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf3032eb3b513f040972c22f54731afc, type: 3}
-  m_Name: Bones
+  m_Script: {fileID: 11500000, guid: cf77a8739e187ad4aa5aaaaf02dd9fb2, type: 3}
+  m_Name: SmallHPpotion
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
-  type: 0
-  description: Just Bones...
+  prefab: {fileID: 3620684381655318454, guid: c763459be06b1b044a1d3f835756da50, type: 3}
+  type: 3
+  description: Potions... More Potions...
+  restoreHPvalue: 50

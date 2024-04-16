@@ -5,8 +5,10 @@ using UnityEngine;
 public enum PotionEffect { Heal, ATK_Up, DEF_Up, SPD_Up }
 public enum EquipType { Weapon, Head, Body, Shoes }
 
-public class ItemManager
+public class ItemManager : MonoBehaviour
 {
+    public InventoryObject gameInventory;
+
     protected string itemID;       //æ∆¿Ã≈€ID
     protected string _name;
     protected int _price;

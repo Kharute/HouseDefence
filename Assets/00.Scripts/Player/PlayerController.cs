@@ -34,7 +34,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float dashPower;
     [SerializeField] float dashTime = 0.2f;
     [SerializeField] float dashCooldown = 1.5f;
-    private TrailRenderer dashTrail;
     [SerializeField] float dashGravity;
 
     [Header("Skill Object")]
@@ -59,7 +58,6 @@ public class PlayerController : MonoBehaviour
         pSprite = GetComponent<SpriteRenderer>();
         pRb = GetComponent<Rigidbody2D>();
         pAni = GetComponent<Animator>();
-        dashTrail = GetComponent<TrailRenderer>();
 
         currentCooltime.AddRange(skillCooltime);
 
@@ -102,6 +100,7 @@ public class PlayerController : MonoBehaviour
             isleft = inputMovement.x == -1;
             if (canDash && timeSinceDash < 0.3f && context.control.name == pressKey)
             {
+                //PlayerAfterImagePool.instance.GetFromPool();
                 StartCoroutine(Dash());
             }
             IsRun = true;
@@ -140,13 +139,12 @@ public class PlayerController : MonoBehaviour
     {
         canDash = false;
         isDashing = true;
+        PlayerAfterImagePool.instance.GetFromPool();
         float originalGravity = pRb.gravityScale;
         pRb.gravityScale = 0;
         pRb.AddForce(new Vector2(isleft? -dashPower : dashPower, 0));
-        dashTrail.emitting = true;
         yield return new WaitForSeconds(dashTime);
         pRb.velocity = Vector2.zero;
-        dashTrail.emitting = false;
         pRb.gravityScale = originalGravity;
         isDashing = false;
         yield return new WaitForSeconds(dashCooldown);

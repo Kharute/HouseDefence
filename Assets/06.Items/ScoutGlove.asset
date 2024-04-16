@@ -9,10 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf77a8739e187ad4aa5aaaaf02dd9fb2, type: 3}
-  m_Name: SmallHPpotion
+  m_Script: {fileID: 11500000, guid: d2b3bc637f40672479b4148a4dc0a66b, type: 3}
+  m_Name: ScoutGlove
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
-  type: 3
-  description: 
-  restoreHPvalue: 0
+  prefab: {fileID: 3620684381655318454, guid: bf37ac0ade7b6b84d824405ba68ef2b8, type: 3}
+  type: 1
+  description: Glove
+  atkBonus: 0
+  defBonus: 5
+  spdBonus: 2

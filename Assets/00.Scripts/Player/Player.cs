@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public InventoryObject inventory;
+
     public float currentHP;
     public float MaxHP = 200;
     public HealthBar healthBar;
@@ -19,18 +21,29 @@ public class Player : MonoBehaviour
     void Update()
     {
         healthBar.SetHealth(currentHP);
-        /*if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(20);
-        }*/
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.tag == "Enemy")
-            TakeDamage(20);
+        {
+            Enemy enemy = collision.collider.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                TakeDamage(enemy.enemyAtk);
+            }
+        }
+        if (collision.collider.tag == "Item")
+        {
+            var item = collision.collider.GetComponent<Item>();
+            if (item)
+            {
+                inventory.AddItem(item.item, 1);
+                collision.gameObject.SetActive(false);
+            }
+        }
     }
 
-    private void TakeDamage(int damage)
+    private void TakeDamage(float damage)
     {
         currentHP -= damage;
     }
@@ -38,6 +51,11 @@ public class Player : MonoBehaviour
     {
         if(currentHP < MaxHP)
             currentHP += heal;
+    }
+
+    private void OnApplicationQuit()
+    {
+        inventory.Container.Clear();
     }
 
 }

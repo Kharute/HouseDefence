@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2b3bc637f40672479b4148a4dc0a66b, type: 3}
+  m_Name: Tunic
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3620684381655318454, guid: 8756117b401b4c94f800fd6e6f449019, type: 3}
+  type: 1
+  description: It's warm.
+  atkBonus: 0
+  defBonus: 10
+  spdBonus: 0

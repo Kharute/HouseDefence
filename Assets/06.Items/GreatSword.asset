@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2b3bc637f40672479b4148a4dc0a66b, type: 3}
-  m_Name: Sword
+  m_Name: GreatSword
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 3620684381655318454, guid: 612b26e6b7fb92b4aa86e1d722d66d10, type: 3}
   type: 1
-  description: Just Sword...
-  atkBonus: 10
+  description: IT'S BIG AND GREAT SWORD!!!!
+  atkBonus: 50
   defBonus: 0
   spdBonus: 0

@@ -12,6 +12,7 @@ TagManager:
   - EnemyStructure
   - HealZone
   - Button
+  - Item
   layers:
   - Default
   - TransparentFX

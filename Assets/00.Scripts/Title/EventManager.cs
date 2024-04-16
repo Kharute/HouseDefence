@@ -4,13 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public enum StageState
-{
-    Stage, Store, Skill, Inventory
-}
-
 public class EventManager : MonoBehaviour
 {
+    public Canvas[] canvas;
+
     // Start is called before the first frame update
     public void StartButtonClick()
     {
@@ -33,8 +30,49 @@ public class EventManager : MonoBehaviour
         }
     }
 
-    public void OnButtonClick_Menu()
+    public void OnButtonClick_Menu_Stage()
     {
-        
+        for (int i = 0; i < canvas.Length; i++)
+        {
+            canvas[i].gameObject.SetActive(false);
+        }
+        canvas[0].gameObject.SetActive(true);
+    }
+    public void OnButtonClick_Menu_Store()
+    {
+        for (int i = 0; i < canvas.Length; i++)
+        {
+            canvas[i].gameObject.SetActive(false);
+        }
+        canvas[1].gameObject.SetActive(true);
+    }
+    public void OnButtonClick_Menu_Skill()
+    {
+        for (int i = 0; i < canvas.Length; i++)
+        {
+            canvas[i].gameObject.SetActive(false);
+        }
+        canvas[2].gameObject.SetActive(true);
+    }
+    public void OnButtonClick_Menu_Inventory()
+    {
+        for (int i = 0; i < canvas.Length; i++)
+        {
+            canvas[i].gameObject.SetActive(false);
+        }
+        canvas[3].gameObject.SetActive(true);
+    }
+
+    public void OnButtonClick_Skill(int layer)
+    {
+        GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Skill");
+        Image[] background = new Image[gameObjects.Length];
+        for (int i = 0; i < gameObjects.Length ;i++)
+        {
+            background[i] = gameObjects[i].GetComponentInChildren<Image>();
+            background[i].color = Color.white;
+        }
+
+        background[layer].color = Color.blue;
     }
 }
