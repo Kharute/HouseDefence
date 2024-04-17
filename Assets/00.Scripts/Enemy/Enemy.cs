@@ -6,6 +6,9 @@ using Pathfinding;
 
 public class Enemy : MonoBehaviour
 {
+    List<GameObject> m_List = new List<GameObject>();
+    public GameObject[] prefabs;
+
     Animator ani;
     Rigidbody2D rb;
     SpriteRenderer sr;
@@ -22,6 +25,19 @@ public class Enemy : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         isRight = sr.flipX;
+        prefabs = Resources.LoadAll<GameObject>("01.Prefabs/Items/Field");
+        int dropCount = Random.Range(1, 3);
+
+        for(int i = 0; i < dropCount; i++)
+        {
+            int randomDrop = Random.Range(0, prefabs.Length);
+            GameObject m_object = Instantiate(prefabs[randomDrop]);
+            
+            m_object.SetActive(false);
+            m_List.Add(m_object);
+        }
+        Debug.Log(dropCount+"°³ µå·Ó");
+
     }
 
     public void TakeDamage(float damage)
@@ -33,7 +49,7 @@ public class Enemy : MonoBehaviour
             isLive = false;
             rb.velocity = Vector2.zero;
             ani.SetTrigger("Death");
-            Invoke(nameof(EnemyDeath), 0.5f);
+            Invoke(nameof(EnemyDeath), 0.3f);
         }
         else
         {
@@ -43,6 +59,12 @@ public class Enemy : MonoBehaviour
     }
     private void EnemyDeath()
     {
+        foreach(var i in m_List)
+        {
+            i.transform.position = transform.position;
+            i.SetActive(true);
+        }
+        
         gameObject.SetActive(false);
     }
 }

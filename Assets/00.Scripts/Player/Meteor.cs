@@ -36,7 +36,7 @@ public class Meteor : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Platform") || collision.CompareTag("EnemyStructure"))
+        if (collision.CompareTag("Platform"))
         {
             transform.position = new Vector2(transform.position.x, transform.position.y+0.3f);
             isExplode = true;

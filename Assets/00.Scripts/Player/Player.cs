@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class Player : MonoBehaviour
 {
@@ -11,12 +12,14 @@ public class Player : MonoBehaviour
     public float MaxHP = 200;
     public HealthBar healthBar;
 
+
     private void Start()
     {
         currentHP = MaxHP;
         healthBar.SetMaxHealth(MaxHP);
         healthBar.SetHealth(currentHP);
     }
+
     // Update is called once per frame
     void Update()
     {
@@ -52,7 +55,6 @@ public class Player : MonoBehaviour
         if(currentHP < MaxHP)
             currentHP += heal;
     }
-
     private void OnApplicationQuit()
     {
         inventory.Container.Clear();

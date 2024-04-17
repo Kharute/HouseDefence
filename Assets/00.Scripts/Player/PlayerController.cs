@@ -27,7 +27,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField]bool IsBlock = false;
     [SerializeField] bool IsRun = false;
     
-    
     [Header("Dash Valriables")]
     [SerializeField] bool canDash = true;
     [SerializeField] bool isDashing;

@@ -21,7 +21,6 @@ public class EnemySpawner : MonoBehaviour
             m_object.SetActive(false);
             m_Queue.Enqueue(m_object);
         }
-
         StartCoroutine(EnemySpawn());
     }
 

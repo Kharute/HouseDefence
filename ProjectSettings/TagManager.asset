@@ -9,10 +9,11 @@ TagManager:
   - Teleport
   - Structure
   - Skill
-  - EnemyStructure
   - HealZone
   - Button
   - Item
+  - SkillLevel
+  - UI
   layers:
   - Default
   - TransparentFX
@@ -25,8 +26,8 @@ TagManager:
   - Structure
   - Skill
   - Enemy
-  - 
-  - 
+  - Item
+  - EnemyStructure
   - 
   - 
   - 

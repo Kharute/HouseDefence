@@ -26,7 +26,8 @@ public class MagicBall : MonoBehaviour
             enemy.TakeDamage(damage);
             gameObject.SetActive(false);
         }
-        if (collision.CompareTag("EnemyStructure"))
+        
+        else if (collision.gameObject.layer == 12)
         {
             SpawnTower tower= collision.GetComponent<SpawnTower>();
             tower.BrokeTower(damage);

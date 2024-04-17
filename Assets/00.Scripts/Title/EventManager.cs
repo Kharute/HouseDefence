@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -7,12 +8,19 @@ using UnityEngine.UI;
 public class EventManager : MonoBehaviour
 {
     public Canvas[] canvas;
+    public TextMeshProUGUI skillContext;
 
     // Start is called before the first frame update
     public void StartButtonClick()
     {
         SceneManager.LoadScene("StageScene");
     }
+
+    public void StartStageButtonClick()
+    {
+        SceneManager.LoadScene("MainScene");
+    }
+
     public void EndButtonClick()
     {
         if (UnityEditor.EditorApplication.isPlaying)
@@ -30,37 +38,13 @@ public class EventManager : MonoBehaviour
         }
     }
 
-    public void OnButtonClick_Menu_Stage()
+    public void OnButtonClick_Menu(int k)
     {
         for (int i = 0; i < canvas.Length; i++)
         {
             canvas[i].gameObject.SetActive(false);
         }
-        canvas[0].gameObject.SetActive(true);
-    }
-    public void OnButtonClick_Menu_Store()
-    {
-        for (int i = 0; i < canvas.Length; i++)
-        {
-            canvas[i].gameObject.SetActive(false);
-        }
-        canvas[1].gameObject.SetActive(true);
-    }
-    public void OnButtonClick_Menu_Skill()
-    {
-        for (int i = 0; i < canvas.Length; i++)
-        {
-            canvas[i].gameObject.SetActive(false);
-        }
-        canvas[2].gameObject.SetActive(true);
-    }
-    public void OnButtonClick_Menu_Inventory()
-    {
-        for (int i = 0; i < canvas.Length; i++)
-        {
-            canvas[i].gameObject.SetActive(false);
-        }
-        canvas[3].gameObject.SetActive(true);
+        canvas[k].gameObject.SetActive(true);
     }
 
     public void OnButtonClick_Skill(int layer)
@@ -74,5 +58,13 @@ public class EventManager : MonoBehaviour
         }
 
         background[layer].color = Color.blue;
+        if (layer == 0)
+        {
+            skillContext.text = "매직 볼 \n그냥 매직볼이다. 1인기\n 스킬 레벨당 +5 dmg, 쿨다운 -0.1 sec";
+        }   
+        else if (layer == 1)
+        {
+            skillContext.text = "메테오 \n광역기이다. \n 스킬 레벨당 +3 dmg, 쿨다운 -0.1 sec";
+        }
     }
 }

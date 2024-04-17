@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemySenser : MonoBehaviour
 {
     EnemyAI_Ground enemy;
+
     private void Awake()
     {
         enemy = GetComponentInParent<EnemyAI_Ground>();
