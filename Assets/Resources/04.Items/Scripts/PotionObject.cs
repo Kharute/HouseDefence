@@ -8,6 +8,6 @@ public class PotionObject : ItemObject
     public float restoreHPvalue;
     private void Awake()
     {
-        type = ItemType.Potions;
+        type = ItemType.Potion;
     }
 }

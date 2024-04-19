@@ -14,6 +14,7 @@ public class PlayerData
     public int skillPoint;
 }
 
+[System.Serializable]
 public class IOManager : MonoBehaviour
 {
     public PlayerData playerData;
@@ -43,7 +44,6 @@ public class IOManager : MonoBehaviour
 
     private void Awake()
     {
-        //SavePlayerDataToJson();
         LoadPlayerDataFromJson();
         SkillLevelGet();
         SkillPointGet();

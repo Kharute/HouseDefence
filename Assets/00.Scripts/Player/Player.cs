@@ -6,6 +6,7 @@ using System.IO;
 
 public class Player : MonoBehaviour
 {
+    public MouseItem mouseItem = new MouseItem();
     public InventoryObject inventory;
 
     public float currentHP;
@@ -23,6 +24,9 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+        
+        
         healthBar.SetHealth(currentHP);
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -37,10 +41,10 @@ public class Player : MonoBehaviour
         }
         if (collision.collider.tag == "Item")
         {
-            var item = collision.collider.GetComponent<Item>();
+            var item = collision.collider.GetComponent<GroundItem>();
             if (item)
             {
-                inventory.AddItem(item.item, 1);
+                inventory.AddItem(new Item(item.item), 1);
                 collision.gameObject.SetActive(false);
             }
         }
@@ -50,14 +54,16 @@ public class Player : MonoBehaviour
     {
         currentHP -= damage;
     }
+
     public void Heal(float heal)
     {
         if(currentHP < MaxHP)
             currentHP += heal;
     }
+
     private void OnApplicationQuit()
     {
-        inventory.Container.Clear();
+        inventory.Container.Items = new InventorySlot[20];
     }
 
 }

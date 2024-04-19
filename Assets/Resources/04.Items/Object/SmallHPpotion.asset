@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf77a8739e187ad4aa5aaaaf02dd9fb2, type: 3}
   m_Name: SmallHPpotion
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3620684381655318454, guid: c763459be06b1b044a1d3f835756da50, type: 3}
+  ID: 13
+  uiDisplay: {fileID: 21300000, guid: b7d19ec039fa7b141bd165aa95496c75, type: 3}
   type: 3
   description: Potions... More Potions...
+  buffs: []
   restoreHPvalue: 50

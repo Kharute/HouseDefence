@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2b3bc637f40672479b4148a4dc0a66b, type: 3}
   m_Name: Tunic
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3620684381655318454, guid: 8756117b401b4c94f800fd6e6f449019, type: 3}
+  ID: 14
+  uiDisplay: {fileID: 0}
   type: 1
   description: It's warm.
-  atkBonus: 0
-  defBonus: 10
-  spdBonus: 0
+  buffs: []

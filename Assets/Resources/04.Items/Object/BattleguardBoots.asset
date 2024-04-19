@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2b3bc637f40672479b4148a4dc0a66b, type: 3}
   m_Name: BattleguardBoots
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3620684381655318454, guid: f2d68166a587914498e204d4ecbb9e14, type: 3}
-  type: 1
+  ID: 2
+  uiDisplay: {fileID: 21300000, guid: 12bba31e10a26b645908ca35cce3ac2a, type: 3}
+  type: 4
   description: Boot.
-  atkBonus: 50
-  defBonus: 0
-  spdBonus: 0
+  buffs:
+  - attribute: 0
+    value: 0
+    min: 0
+    max: 0

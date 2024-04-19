@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2b3bc637f40672479b4148a4dc0a66b, type: 3}
   m_Name: BattleguardGlove
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3620684381655318454, guid: 3511134c8e12a41488d1382857e58c71, type: 3}
+  ID: 3
+  uiDisplay: {fileID: 21300000, guid: a889cb8ba677b3e418c33307c1336099, type: 3}
   type: 1
   description: Glove
-  atkBonus: 50
-  defBonus: 0
-  spdBonus: 0
+  buffs:
+  - attribute: 0
+    value: 0
+    min: 0
+    max: 0

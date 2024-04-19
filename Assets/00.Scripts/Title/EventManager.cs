@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,25 +5,40 @@ using UnityEngine.UI;
 
 public class EventManager : MonoBehaviour
 {
-    public Canvas[] canvas;
     public TextMeshProUGUI skillContext;
+    public Canvas[] canvas;
+
+    public int stage = -1;
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+        
+    }
+    void OnEnable()
+    {
+        // 씬 매니저의 sceneLoaded에 체인을 건다.
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
 
     // Start is called before the first frame update
     public void StartButtonClick()
     {
+        
         SceneManager.LoadScene("StageScene");
     }
 
-    public void StartStageButtonClick()
+    public void StartStageButtonClick(int i)
     {
+        stage = i;
         SceneManager.LoadScene("MainScene");
     }
 
     public void EndButtonClick()
     {
-        if (UnityEditor.EditorApplication.isPlaying)
+        /*if (UnityEditor.EditorApplication.isPlaying)
             UnityEditor.EditorApplication.isPlaying = false;
-        else
+        else*/
             Application.Quit();
     }
     public void OnMouseStay_Menu()
@@ -66,5 +79,19 @@ public class EventManager : MonoBehaviour
         {
             skillContext.text = "메테오 \n광역기이다. \n 스킬 레벨당 +3 dmg, 쿨다운 -0.1 sec";
         }
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "MainScene" && stage > -1)
+        {
+            GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Stage");
+            for(int i = 0; i< gameObjects.Length; i++)
+                gameObjects[i].SetActive(false);
+
+            if(gameObjects.Length > stage)
+                gameObjects[stage].SetActive(true);
+        }
+        
     }
 }

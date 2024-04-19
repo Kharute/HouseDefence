@@ -32,7 +32,7 @@ public class JewelSpawner : MonoBehaviour
     private void Update()
     {
         int count = 0;
-        for(int i = 0;i < jewelCount;i++)
+        for(int i = 0;i < jewelCount; i++)
         {
             if (!jewel[i].activeInHierarchy)
             {

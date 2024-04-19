@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2b3bc637f40672479b4148a4dc0a66b, type: 3}
   m_Name: ScoutGlove
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3620684381655318454, guid: bf37ac0ade7b6b84d824405ba68ef2b8, type: 3}
+  ID: 10
+  uiDisplay: {fileID: 21300000, guid: 7b7b7063f51899d4ab6475ddb0f94ca9, type: 3}
   type: 1
   description: Glove
-  atkBonus: 0
-  defBonus: 5
-  spdBonus: 2
+  buffs:
+  - attribute: 0
+    value: 0
+    min: 0
+    max: 0

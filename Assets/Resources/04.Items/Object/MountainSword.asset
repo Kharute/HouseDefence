@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2b3bc637f40672479b4148a4dc0a66b, type: 3}
   m_Name: MountainSword
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3620684381655318454, guid: 48ff2e46c85624f41af38ef977940c23, type: 3}
-  type: 1
+  ID: 8
+  uiDisplay: {fileID: 21300000, guid: 62a99ebf2f5cfe04da1d208b9e7817a9, type: 3}
+  type: 2
   description: sword
-  atkBonus: 50
-  defBonus: 0
-  spdBonus: 0
+  buffs:
+  - attribute: 0
+    value: 0
+    min: 0
+    max: 0

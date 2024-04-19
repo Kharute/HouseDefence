@@ -12,4 +12,147 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb0bb7ca7a5b154e81ccf21ea2ec34f, type: 3}
   m_Name: Storage Inventory
   m_EditorClassIdentifier: 
-  Container: []
+  savePath: /Storage.Save
+  database: {fileID: 11400000, guid: 67fd5ad90f0b0544ea8a0b2c86469614, type: 2}
+  Container:
+    Items:
+    - parent: {fileID: 0}
+      ID: -1
+      item:
+        Name: 
+        Id: 0
+        buffs: []
+      amount: 0
+    - parent: {fileID: 0}
+      ID: -1
+      item:
+        Name: 
+        Id: 0
+        buffs: []
+      amount: 0
+    - parent: {fileID: 0}
+      ID: -1
+      item:
+        Name: 
+        Id: 0
+        buffs: []
+      amount: 0
+    - parent: {fileID: 0}
+      ID: -1
+      item:
+        Name: 
+        Id: 0
+        buffs: []
+      amount: 0
+    - parent: {fileID: 0}
+      ID: -1
+      item:
+        Name: 
+        Id: 0
+        buffs: []
+      amount: 0
+    - parent: {fileID: 0}
+      ID: -1
+      item:
+        Name: 
+        Id: 0
+        buffs: []
+      amount: 0
+    - parent: {fileID: 0}
+      ID: -1
+      item:
+        Name: 
+        Id: 0
+        buffs: []
+      amount: 0
+    - parent: {fileID: 0}
+      ID: -1
+      item:
+        Name: 
+        Id: 0
+        buffs: []
+      amount: 0
+    - parent: {fileID: 0}
+      ID: -1
+      item:
+        Name: 
+        Id: 0
+        buffs: []
+      amount: 0
+    - parent: {fileID: 0}
+      ID: -1
+      item:
+        Name: 
+        Id: 0
+        buffs: []
+      amount: 0
+    - parent: {fileID: 0}
+      ID: -1
+      item:
+        Name: 
+        Id: 0
+        buffs: []
+      amount: 0
+    - parent: {fileID: 0}
+      ID: -1
+      item:
+        Name: 
+        Id: 0
+        buffs: []
+      amount: 0
+    - parent: {fileID: 0}
+      ID: -1
+      item:
+        Name: 
+        Id: 0
+        buffs: []
+      amount: 0
+    - parent: {fileID: 0}
+      ID: -1
+      item:
+        Name: 
+        Id: 0
+        buffs: []
+      amount: 0
+    - parent: {fileID: 0}
+      ID: -1
+      item:
+        Name: 
+        Id: 0
+        buffs: []
+      amount: 0
+    - parent: {fileID: 0}
+      ID: -1
+      item:
+        Name: 
+        Id: 0
+        buffs: []
+      amount: 0
+    - parent: {fileID: 0}
+      ID: -1
+      item:
+        Name: 
+        Id: 0
+        buffs: []
+      amount: 0
+    - parent: {fileID: 0}
+      ID: -1
+      item:
+        Name: 
+        Id: 0
+        buffs: []
+      amount: 0
+    - parent: {fileID: 0}
+      ID: -1
+      item:
+        Name: 
+        Id: 0
+        buffs: []
+      amount: 0
+    - parent: {fileID: 0}
+      ID: -1
+      item:
+        Name: 
+        Id: 0
+        buffs: []
+      amount: 0

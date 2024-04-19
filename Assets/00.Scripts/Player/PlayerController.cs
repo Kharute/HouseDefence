@@ -148,6 +148,7 @@ public class PlayerController : MonoBehaviour
         isDashing = false;
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
+        yield break;
     }
 
     public void OnTeleport(InputAction.CallbackContext context)

@@ -7,12 +7,9 @@ using UnityEngine;
 
 public class EquipmentObject : ItemObject
 {
-    public float atkBonus;
-    public float defBonus;
-    public float spdBonus;
     public void Awake()
     {
-        type = ItemType.Equip;
+        type = ItemType.Chest;
     }
 
 }

@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2b3bc637f40672479b4148a4dc0a66b, type: 3}
   m_Name: GreatSword
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3620684381655318454, guid: 612b26e6b7fb92b4aa86e1d722d66d10, type: 3}
-  type: 1
+  ID: 6
+  uiDisplay: {fileID: 21300000, guid: c0ea4b6e528e7fe4aa6cdc94d38691a1, type: 3}
+  type: 2
   description: IT'S BIG AND GREAT SWORD!!!!
-  atkBonus: 50
-  defBonus: 0
-  spdBonus: 0
+  buffs:
+  - attribute: 0
+    value: 0
+    min: 0
+    max: 0

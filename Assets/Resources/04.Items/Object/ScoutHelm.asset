@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2b3bc637f40672479b4148a4dc0a66b, type: 3}
   m_Name: ScoutHelm
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3620684381655318454, guid: a696a29cbc1f6d94d88ff421f1aed851, type: 3}
+  ID: 11
+  uiDisplay: {fileID: 21300000, guid: 67eaf2a7d1686074684270d1821c55cb, type: 3}
   type: 1
   description: Helm
-  atkBonus: 0
-  defBonus: 20
-  spdBonus: 0
+  buffs:
+  - attribute: 0
+    value: 0
+    min: 0
+    max: 0
