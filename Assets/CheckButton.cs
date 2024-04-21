@@ -18,6 +18,7 @@ public class CheckButton : MonoBehaviour
         {
             updateInventory.ItemUpdate();
         }
+        Time.timeScale = 1;
         SceneManager.LoadScene("StageScene");
     }
 }

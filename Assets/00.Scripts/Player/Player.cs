@@ -20,13 +20,10 @@ public class Player : MonoBehaviour
         healthBar.SetMaxHealth(MaxHP);
         healthBar.SetHealth(currentHP);
     }
-
+    
     // Update is called once per frame
     void Update()
     {
-        
-        
-        
         healthBar.SetHealth(currentHP);
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -53,6 +50,10 @@ public class Player : MonoBehaviour
     private void TakeDamage(float damage)
     {
         currentHP -= damage;
+        if(currentHP < 0.1f)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     public void Heal(float heal)

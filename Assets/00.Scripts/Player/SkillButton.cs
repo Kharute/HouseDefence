@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SkillButton : MonoBehaviour
 {
-    public IOManager IOManager;
     public TextMeshProUGUI SkillPointText;
     public TextMeshProUGUI numberText;
     public TextMeshProUGUI stringText;
@@ -12,17 +11,16 @@ public class SkillButton : MonoBehaviour
     // Start is called before the first frame update
     public void ButtonPressed(int skillNo)
     {
-        // 스킬포인트 확인하고 있으면 진행 없으면 빠꾸
 
         int counter = int.Parse(numberText.text);
 
-        if (stringText.text == "-" && IOManager.playerData.skillLevel[skillNo] > 1)
+        if (stringText.text == "-" && IOManager.Instance.playerData.skillLevel[skillNo] > 1)
         {
-            IOManager.playerData.skillPoint += counter--;
+            IOManager.Instance.playerData.skillPoint += counter--;
         }
-        else if (stringText.text == "+" && IOManager.playerData.skillPoint >= counter + 1)
+        else if (stringText.text == "+" && IOManager.Instance.playerData.skillPoint >= counter + 1)
         {
-            IOManager.playerData.skillPoint -= ++counter;
+            IOManager.Instance.playerData.skillPoint -= ++counter;
             
         }
         else
@@ -31,9 +29,9 @@ public class SkillButton : MonoBehaviour
         }
 
         numberText.text = counter + "";
-        SkillPointText.text = "스킬포인트 : " + IOManager.playerData.skillPoint;
-        IOManager.playerData.skillLevel[skillNo] = counter;
+        SkillPointText.text = "스킬포인트 : " + IOManager.Instance.playerData.skillPoint;
+        IOManager.Instance.playerData.skillLevel[skillNo] = counter;
 
-        IOManager.SavePlayerDataToJson();
+        IOManager.Instance.SavePlayerDataToJson();
     }
 }

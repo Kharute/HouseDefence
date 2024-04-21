@@ -9,7 +9,7 @@ public class EquipmentObject : ItemObject
 {
     public void Awake()
     {
-        type = ItemType.Chest;
+        type = ItemType.Glove;
     }
 
 }

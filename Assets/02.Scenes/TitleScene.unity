@@ -644,7 +644,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.6952325}
   m_AnchorMax: {x: 1, y: 0.6952325}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -600, y: 50}
+  m_SizeDelta: {x: -300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &606063640
 MonoBehaviour:
@@ -666,10 +666,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uAC8C\uC784"
+  m_text: "\uC9D1 \uC9C0\uD0A4\uAE30 \uAC8C\uC784\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7f5aa7da96952df42b4540ba22bc8196, type: 2}
-  m_sharedMaterial: {fileID: 2371557142089049175, guid: 7f5aa7da96952df42b4540ba22bc8196, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c006783692c0a5d4c9fd4e068b92a744, type: 2}
+  m_sharedMaterial: {fileID: -8899853464819768994, guid: c006783692c0a5d4c9fd4e068b92a744, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -772,8 +772,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30fcd16e2ca5bd0428e7eac9947d4cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: []
   skillContext: {fileID: 0}
+  canvas: []
+  stage: -1
 --- !u!4 &1208738705
 Transform:
   m_ObjectHideFlags: 0
@@ -1160,7 +1161,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.54901963, g: 0.6431373, b: 0.70980394, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

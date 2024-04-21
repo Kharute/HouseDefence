@@ -19,7 +19,7 @@ public class EnemyAI_Ground : MonoBehaviour
     int currentWaypoint = 0;
     bool reachedEndOfPath = false;
 
-    public float jumpForce = 200f;
+    public float jumpForce = 300f;
     public float checkDistance = 3f;
 
     Rigidbody2D rb;

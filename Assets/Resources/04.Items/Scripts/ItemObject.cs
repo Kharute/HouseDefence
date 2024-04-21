@@ -7,7 +7,7 @@ public enum ItemType
     Weapon,
     Shield,
     Boots,
-    Chest,
+    Glove,
     Default
 }
 

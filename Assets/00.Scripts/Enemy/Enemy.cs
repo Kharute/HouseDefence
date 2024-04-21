@@ -7,18 +7,31 @@ using Pathfinding;
 public class Enemy : MonoBehaviour
 {
     List<GameObject> m_List = new List<GameObject>();
+    public HealthBar healthBar;
     public GameObject[] prefabs;
 
     Animator ani;
     Rigidbody2D rb;
     SpriteRenderer sr;
 
-    public float HP = 3;
+    public float currentHP;
+    public float MaxHP = 10;
     public float enemyAtk = 50;
-    public float knockBackPower = 200.0f;
+    public float knockBackPower = 150.0f;
     public bool isLive = true;
     public bool isRight;
+    private void Start()
+    {
+        currentHP = MaxHP;
+        healthBar.SetMaxHealth(MaxHP);
+        healthBar.SetHealth(currentHP);
+    }
 
+    // Update is called once per frame
+    void Update()
+    {
+        healthBar.SetHealth(currentHP);
+    }
     private void Awake()
     {
         ani = GetComponent<Animator>();
@@ -37,19 +50,18 @@ public class Enemy : MonoBehaviour
             m_List.Add(m_object);
         }
         Debug.Log(dropCount+"°³ µå·Ó");
-
     }
 
     public void TakeDamage(float damage)
     {
-        HP -= damage;
+        currentHP -= damage;
 
-        if(HP <= 0)
+        if(currentHP <= 0)
         {
             isLive = false;
             rb.velocity = Vector2.zero;
             ani.SetTrigger("Death");
-            Invoke(nameof(EnemyDeath), 0.3f);
+            Invoke(nameof(EnemyDeath), 0.2f);
         }
         else
         {

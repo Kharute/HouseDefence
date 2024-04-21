@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using TMPro;
+using JetBrains.Annotations;
+using Unity.VisualScripting;
 
 [System.Serializable]
 public class PlayerData
@@ -10,6 +12,8 @@ public class PlayerData
     public int atk;
     public int def;
     public int spd;
+    public Dictionary<int, List<bool>> stageCleard;
+
     public List<int> skillLevel;
     public int skillPoint;
 }
@@ -17,8 +21,11 @@ public class PlayerData
 [System.Serializable]
 public class IOManager : MonoBehaviour
 {
+    private static IOManager instance = null;
     public PlayerData playerData;
     public TextMeshProUGUI skillPointObject;
+    public int curStage;
+
 
     [ContextMenu("To Json Data")]
     public void SavePlayerDataToJson()
@@ -40,13 +47,49 @@ public class IOManager : MonoBehaviour
         string jsonData = File.ReadAllText(path);
         // 이 Json데이터를 역직렬화하여 playerData에 넣어줌
         playerData = JsonUtility.FromJson<PlayerData>(jsonData);
+
+        if(playerData.stageCleard == null)
+        {
+            playerData.stageCleard = new Dictionary<int, List<bool>>()
+            {
+                {0, new List<bool> {false, false, false }},
+                {1, new List<bool> {false, false, false }},
+                {2, new List<bool> {false, false, false }},
+                {3, new List<bool> {false, false, false }}
+            };
+        }    
+
+        SavePlayerDataToJson();
     }
 
     private void Awake()
     {
+        if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+
         LoadPlayerDataFromJson();
+        
         SkillLevelGet();
         SkillPointGet();
+    }
+
+    public static IOManager Instance
+    {
+        get
+        {
+            if (null == instance)
+            {
+                return null;
+            }
+            return instance;
+        }
     }
 
     void SkillPointGet()

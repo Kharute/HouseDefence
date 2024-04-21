@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf3032eb3b513f040972c22f54731afc, type: 3}
   m_Name: Jewel
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3620684381655318454, guid: c52aff7cdd8ea8d499a1a311bc45bc42, type: 3}
-  type: 0
+  ID: 0
+  uiDisplay: {fileID: 0}
+  type: 6
   description: Use to Upgrade Skill.
+  buffs:
+  - attribute: 0
+    value: 0
+    min: 0
+    max: 0

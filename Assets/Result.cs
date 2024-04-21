@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Result : MonoBehaviour
 {
-    public ToDoList toDoList;
     public GameObject[] star;
 
     // Update is called once per frame
@@ -17,7 +16,7 @@ public class Result : MonoBehaviour
     {
         for (int i = 0; i < star.Length; i++)
         {
-            star[i].SetActive(toDoList.clear[i]);
+            star[i].SetActive(IOManager.Instance.playerData.stageCleard[IOManager.Instance.curStage][i]);
         }
     }
 }

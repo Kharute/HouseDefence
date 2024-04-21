@@ -15,6 +15,7 @@ TagManager:
   - SkillLevel
   - UI
   - Stage
+  - EnemyStructure
   layers:
   - Default
   - TransparentFX

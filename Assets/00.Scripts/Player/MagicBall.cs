@@ -7,11 +7,12 @@ public class MagicBall : MonoBehaviour
     public float time;
     public bool isleft;
     public float damage = 10;
-
+    public float speed = 3f;
+    
     void Update()
     {
         time += Time.deltaTime;
-        transform.Translate(Vector2.right * (isleft? -0.01f : 0.01f));
+        transform.Translate(Vector2.right * (isleft? -0.01f : 0.01f) * speed);
         if (time > 3)
         {
             time = 0;

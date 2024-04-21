@@ -10,36 +10,38 @@ public class EventManager : MonoBehaviour
 
     public int stage = -1;
 
-    private void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-        
-    }
-    void OnEnable()
-    {
-        // 씬 매니저의 sceneLoaded에 체인을 건다.
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
     // Start is called before the first frame update
     public void StartButtonClick()
-    {
-        
+    {   
         SceneManager.LoadScene("StageScene");
     }
-
-    public void StartStageButtonClick(int i)
+    public void StartStageButtonClick(int stage)
     {
-        stage = i;
-        SceneManager.LoadScene("MainScene");
+        //IOManager iOManager = IOManager.LoadPlayerDataFromJson();
+        IOManager.Instance.curStage = stage;
+        switch (stage)
+        {
+            case 0:
+                SceneManager.LoadScene("Stage1");
+                break;
+            case 1:
+                SceneManager.LoadScene("Stage2");
+                break;
+            case 2:
+                SceneManager.LoadScene("Stage3");
+                break;
+            case 3:
+                SceneManager.LoadScene("Stage4");
+                break;
+            case -1:
+                break;
+        }
+        
     }
 
     public void EndButtonClick()
     {
-        /*if (UnityEditor.EditorApplication.isPlaying)
-            UnityEditor.EditorApplication.isPlaying = false;
-        else*/
-            Application.Quit();
+        Application.Quit();
     }
     public void OnMouseStay_Menu()
     {
@@ -79,19 +81,5 @@ public class EventManager : MonoBehaviour
         {
             skillContext.text = "메테오 \n광역기이다. \n 스킬 레벨당 +3 dmg, 쿨다운 -0.1 sec";
         }
-    }
-
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        if (scene.name == "MainScene" && stage > -1)
-        {
-            GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Stage");
-            for(int i = 0; i< gameObjects.Length; i++)
-                gameObjects[i].SetActive(false);
-
-            if(gameObjects.Length > stage)
-                gameObjects[stage].SetActive(true);
-        }
-        
     }
 }

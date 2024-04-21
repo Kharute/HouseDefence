@@ -12,7 +12,16 @@ EditorBuildSettings:
     path: Assets/02.Scenes/StageScene.unity
     guid: a81051ce032fa5046a75022c66997962
   - enabled: 1
-    path: Assets/02.Scenes/MainScene.unity
+    path: Assets/02.Scenes/Stage1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/02.Scenes/Stage2.unity
+    guid: 6d26c9dce45263f46ab1a8ce886585db
+  - enabled: 1
+    path: Assets/02.Scenes/Stage3.unity
+    guid: bef68076c011b4c41bef15fa398b0df6
+  - enabled: 1
+    path: Assets/02.Scenes/Stage4.unity
+    guid: 9255a65a5ddf95941b170ad476f36464
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9bf2fcae0dca1ab4490dc267221bb861, type: 2}
