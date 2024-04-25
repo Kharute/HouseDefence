@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5585292557800078109}
   m_Layer: 0
   m_Name: Jewel
-  m_TagString: Item
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3765552adbc521f45a45fda5c1188fe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 627579003369d884d9979254ab8a2da5, type: 2}
+  item: {fileID: 0}
 --- !u!95 &5585292557800078109
 Animator:
   serializedVersion: 5

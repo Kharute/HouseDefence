@@ -26,16 +26,12 @@ MonoBehaviour:
       amount: 0
     - AllowedItems: 020000000500000003000000
       parent: {fileID: 0}
-      ID: 7
+      ID: -1
       item:
-        Name: ManticoreSword
-        Id: 7
-        buffs:
-        - attribute: 0
-          value: 0
-          min: 0
-          max: 0
-      amount: 1
+        Name: 
+        Id: -1
+        buffs: []
+      amount: 0
     - AllowedItems: 050000000300000002000000
       parent: {fileID: 0}
       ID: -1
@@ -46,16 +42,12 @@ MonoBehaviour:
       amount: 0
     - AllowedItems: 050000000300000002000000
       parent: {fileID: 0}
-      ID: 7
+      ID: -1
       item:
-        Name: ManticoreSword
-        Id: 7
-        buffs:
-        - attribute: 0
-          value: 0
-          min: 0
-          max: 0
-      amount: 1
+        Name: 
+        Id: -1
+        buffs: []
+      amount: 0
     - AllowedItems: 04000000
       parent: {fileID: 0}
       ID: -1

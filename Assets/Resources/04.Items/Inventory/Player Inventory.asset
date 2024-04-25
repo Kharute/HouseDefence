@@ -26,112 +26,12 @@ MonoBehaviour:
       amount: 0
     - AllowedItems: 
       parent: {fileID: 0}
-      ID: 2
+      ID: -1
       item:
-        Name: BattleguardBoots
-        Id: 2
-        buffs:
-        - attribute: 0
-          value: 0
-          min: 0
-          max: 0
-      amount: 1
-    - AllowedItems: 
-      parent: {fileID: 0}
-      ID: 9
-      item:
-        Name: ScoutBoots
-        Id: 9
-        buffs:
-        - attribute: 0
-          value: 0
-          min: 0
-          max: 0
-      amount: 1
-    - AllowedItems: 
-      parent: {fileID: 0}
-      ID: 0
-      item:
-        Name: BanditLightBoots
-        Id: 0
-        buffs:
-        - attribute: 0
-          value: 0
-          min: 0
-          max: 0
-      amount: 1
-    - AllowedItems: 
-      parent: {fileID: 0}
-      ID: 1
-      item:
-        Name: BanditLightGlove
-        Id: 1
-        buffs:
-        - attribute: 0
-          value: 0
-          min: 0
-          max: 0
-      amount: 1
-    - AllowedItems: 
-      parent: {fileID: 0}
-      ID: 4
-      item:
-        Name: BattleguardHelm
-        Id: 4
-        buffs:
-        - attribute: 0
-          value: 0
-          min: 0
-          max: 0
-      amount: 1
-    - AllowedItems: 
-      parent: {fileID: 0}
-      ID: 4
-      item:
-        Name: BattleguardHelm
-        Id: 4
-        buffs:
-        - attribute: 0
-          value: 0
-          min: 0
-          max: 0
-      amount: 1
-    - AllowedItems: 
-      parent: {fileID: 0}
-      ID: 11
-      item:
-        Name: ScoutHelm
-        Id: 11
-        buffs:
-        - attribute: 0
-          value: 0
-          min: 0
-          max: 0
-      amount: 1
-    - AllowedItems: 
-      parent: {fileID: 0}
-      ID: 11
-      item:
-        Name: ScoutHelm
-        Id: 11
-        buffs:
-        - attribute: 0
-          value: 0
-          min: 0
-          max: 0
-      amount: 1
-    - AllowedItems: 
-      parent: {fileID: 0}
-      ID: 10
-      item:
-        Name: ScoutGlove
-        Id: 10
-        buffs:
-        - attribute: 0
-          value: 0
-          min: 0
-          max: 0
-      amount: 1
+        Name: 
+        Id: -1
+        buffs: []
+      amount: 0
     - AllowedItems: 
       parent: {fileID: 0}
       ID: -1
@@ -142,16 +42,12 @@ MonoBehaviour:
       amount: 0
     - AllowedItems: 
       parent: {fileID: 0}
-      ID: 10
+      ID: -1
       item:
-        Name: ScoutGlove
-        Id: 10
-        buffs:
-        - attribute: 0
-          value: 0
-          min: 0
-          max: 0
-      amount: 1
+        Name: 
+        Id: -1
+        buffs: []
+      amount: 0
     - AllowedItems: 
       parent: {fileID: 0}
       ID: -1
@@ -162,85 +58,121 @@ MonoBehaviour:
       amount: 0
     - AllowedItems: 
       parent: {fileID: 0}
-      ID: 11
+      ID: -1
       item:
-        Name: ScoutHelm
-        Id: 11
-        buffs:
-        - attribute: 0
-          value: 0
-          min: 0
-          max: 0
-      amount: 1
+        Name: 
+        Id: -1
+        buffs: []
+      amount: 0
     - AllowedItems: 
       parent: {fileID: 0}
-      ID: 11
+      ID: -1
       item:
-        Name: ScoutHelm
-        Id: 11
-        buffs:
-        - attribute: 0
-          value: 0
-          min: 0
-          max: 0
-      amount: 1
+        Name: 
+        Id: -1
+        buffs: []
+      amount: 0
     - AllowedItems: 
       parent: {fileID: 0}
-      ID: 10
+      ID: -1
       item:
-        Name: ScoutGlove
-        Id: 10
-        buffs:
-        - attribute: 0
-          value: 0
-          min: 0
-          max: 0
-      amount: 1
+        Name: 
+        Id: -1
+        buffs: []
+      amount: 0
     - AllowedItems: 
       parent: {fileID: 0}
-      ID: 8
+      ID: -1
       item:
-        Name: MountainSword
-        Id: 8
-        buffs:
-        - attribute: 0
-          value: 0
-          min: 0
-          max: 0
-      amount: 1
+        Name: 
+        Id: -1
+        buffs: []
+      amount: 0
     - AllowedItems: 
       parent: {fileID: 0}
-      ID: 1
+      ID: -1
       item:
-        Name: BanditLightGlove
-        Id: 1
-        buffs:
-        - attribute: 0
-          value: 0
-          min: 0
-          max: 0
-      amount: 1
+        Name: 
+        Id: -1
+        buffs: []
+      amount: 0
     - AllowedItems: 
       parent: {fileID: 0}
-      ID: 0
+      ID: -1
       item:
-        Name: BanditLightBoots
-        Id: 0
-        buffs:
-        - attribute: 0
-          value: 0
-          min: 0
-          max: 0
-      amount: 1
+        Name: 
+        Id: -1
+        buffs: []
+      amount: 0
     - AllowedItems: 
       parent: {fileID: 0}
-      ID: 11
+      ID: -1
       item:
-        Name: Jewel
-        Id: 0
-        buffs:
-        - attribute: 0
-          value: 0
-          min: 0
-          max: 0
-      amount: 1
+        Name: 
+        Id: -1
+        buffs: []
+      amount: 0
+    - AllowedItems: 
+      parent: {fileID: 0}
+      ID: -1
+      item:
+        Name: 
+        Id: -1
+        buffs: []
+      amount: 0
+    - AllowedItems: 
+      parent: {fileID: 0}
+      ID: -1
+      item:
+        Name: 
+        Id: -1
+        buffs: []
+      amount: 0
+    - AllowedItems: 
+      parent: {fileID: 0}
+      ID: -1
+      item:
+        Name: 
+        Id: -1
+        buffs: []
+      amount: 0
+    - AllowedItems: 
+      parent: {fileID: 0}
+      ID: -1
+      item:
+        Name: 
+        Id: -1
+        buffs: []
+      amount: 0
+    - AllowedItems: 
+      parent: {fileID: 0}
+      ID: -1
+      item:
+        Name: 
+        Id: -1
+        buffs: []
+      amount: 0
+    - AllowedItems: 
+      parent: {fileID: 0}
+      ID: -1
+      item:
+        Name: 
+        Id: -1
+        buffs: []
+      amount: 0
+    - AllowedItems: 
+      parent: {fileID: 0}
+      ID: -1
+      item:
+        Name: 
+        Id: -1
+        buffs: []
+      amount: 0
+    - AllowedItems: 
+      parent: {fileID: 0}
+      ID: -1
+      item:
+        Name: 
+        Id: -1
+        buffs: []
+      amount: 0
