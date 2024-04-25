@@ -18,22 +18,18 @@ MonoBehaviour:
     Items:
     - AllowedItems: 01000000
       parent: {fileID: 0}
-      ID: 5
+      ID: -1
       item:
-        Name: DarkMountain
-        Id: 5
-        buffs:
-        - attribute: 0
-          value: 0
-          min: 0
-          max: 0
-      amount: 1
+        Name: 
+        Id: -1
+        buffs: []
+      amount: 0
     - AllowedItems: 020000000500000003000000
       parent: {fileID: 0}
-      ID: 1
+      ID: 7
       item:
-        Name: BanditLightGlove
-        Id: 1
+        Name: ManticoreSword
+        Id: 7
         buffs:
         - attribute: 0
           value: 0
@@ -42,22 +38,18 @@ MonoBehaviour:
       amount: 1
     - AllowedItems: 050000000300000002000000
       parent: {fileID: 0}
-      ID: 8
+      ID: -1
       item:
-        Name: MountainSword
-        Id: 8
-        buffs:
-        - attribute: 0
-          value: 0
-          min: 0
-          max: 0
-      amount: 1
+        Name: 
+        Id: -1
+        buffs: []
+      amount: 0
     - AllowedItems: 050000000300000002000000
       parent: {fileID: 0}
-      ID: 1
+      ID: 7
       item:
-        Name: BanditLightGlove
-        Id: 1
+        Name: ManticoreSword
+        Id: 7
         buffs:
         - attribute: 0
           value: 0
@@ -66,13 +58,9 @@ MonoBehaviour:
       amount: 1
     - AllowedItems: 04000000
       parent: {fileID: 0}
-      ID: 0
+      ID: -1
       item:
-        Name: BanditLightBoots
-        Id: 0
-        buffs:
-        - attribute: 0
-          value: 0
-          min: 0
-          max: 0
-      amount: 1
+        Name: 
+        Id: -1
+        buffs: []
+      amount: 0

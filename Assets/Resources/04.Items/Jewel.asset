@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf3032eb3b513f040972c22f54731afc, type: 3}
   m_Name: Jewel
   m_EditorClassIdentifier: 
-  ID: 0
+  ID: 15
   uiDisplay: {fileID: 0}
   type: 6
   description: Use to Upgrade Skill.
