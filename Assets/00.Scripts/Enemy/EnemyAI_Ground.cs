@@ -4,28 +4,13 @@ using UnityEngine;
 using Pathfinding;
 using Unity.VisualScripting;
 
-public class EnemyAI_Ground : MonoBehaviour
+public class EnemyAI_Ground : EnemyAI
 {
-    public List<GameObject> AllObjects;
-    public GameObject nearestObj;
-    CircleCollider2D circleCollider;
-    float distance;
-    float nearestDistance = 10000;
-
-    public float speed = 300f;
-    public float nextWaypointDistance = 3f;
-
-    Path path;
-    int currentWaypoint = 0;
-    bool reachedEndOfPath = false;
+    Enemy enemy;
+    SpriteRenderer sr;
 
     public float jumpForce = 300f;
     public float checkDistance = 3f;
-
-    Rigidbody2D rb;
-    Seeker seeker;
-    Enemy enemy;
-    SpriteRenderer sr;
 
     bool isGround;
     public bool isChasing;
@@ -46,28 +31,6 @@ public class EnemyAI_Ground : MonoBehaviour
 
         //0.5초마다 계속 타겟을 Chase해주는 Invoke
         InvokeRepeating("UpdatePath", 0f, 0.5f);
-    }
-
-    void UpdatePath()
-    {
-        if (seeker.IsDone())
-        {
-            if (nearestObj.activeInHierarchy == false)
-            {
-                AllObjects.Remove(nearestObj);
-            }
-            SetTarget();
-            seeker.StartPath(rb.position, nearestObj.transform.position, OnPathComplete);
-        }
-    }
-
-    void OnPathComplete(Path p)
-    {
-        if(!p.error)
-        {
-            path = p;
-            currentWaypoint = 0;
-        }
     }
 
     // Update is called once per frame
@@ -125,34 +88,6 @@ public class EnemyAI_Ground : MonoBehaviour
         }
     }
 
-    void LoadTarget()
-    {
-        AllObjects.AddRange(GameObject.FindGameObjectsWithTag("Structure"));
-    }
-
-    void SetTarget()
-    {
-        nearestDistance = 10000;
-
-        if (isChasing)
-        {
-            GameObject pOBJ = GameObject.FindWithTag("Player");
-            nearestObj = pOBJ;
-            nearestDistance = distance;
-        }
-        else
-        {
-            for (int i = 0; i < AllObjects.Count; i++)
-            {
-                distance = Vector2.Distance(this.transform.position, AllObjects[i].transform.position);
-                if (distance < nearestDistance)
-                {
-                    nearestObj = AllObjects[i];
-                    nearestDistance = distance;
-                }
-            }
-        }
-    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.collider.CompareTag("Platform"))
