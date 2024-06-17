@@ -13,6 +13,12 @@ public class EventManager : MonoBehaviour
     // Start is called before the first frame update
     public void StartButtonClick()
     {   
+        
+    }
+
+    public void OnClick_StartStageScene()
+    {
+        //[TODO - KDH :  Scene -> UI change]
         SceneManager.LoadScene("StageScene");
     }
     public void StartStageButtonClick(int stage)
