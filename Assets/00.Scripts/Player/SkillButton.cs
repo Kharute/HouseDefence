@@ -1,37 +1,57 @@
-
+using System.ComponentModel;
 using TMPro;
 using UnityEngine;
+using ViewModel.Extention;
+
+//View
 
 public class SkillButton : MonoBehaviour
 {
-    public TextMeshProUGUI SkillPointText;
-    public TextMeshProUGUI numberText;
-    public TextMeshProUGUI stringText;
+    // 스킬 1개당 하나만 넣고
+    [SerializeField] TextMeshProUGUI skillLevelText;
+    [SerializeField] TextMeshProUGUI commentText;
+    [SerializeField] int skillId;
+    private SkillViewModel _vm;
 
-    // Start is called before the first frame update
-    public void ButtonPressed(int skillNo)
+    //스킬만 꺼낸다.
+
+    private void OnEnable()
     {
-
-        int counter = int.Parse(numberText.text);
-
-        if (stringText.text == "-" && IOManager.Instance.playerData.skillLevel[skillNo] > 1)
+        if(_vm == null)
         {
-            IOManager.Instance.playerData.skillPoint += counter--;
+            _vm = new SkillViewModel();
+            _vm.PropertyChanged += OnPropertyChanged;
+            _vm.RegisterEventsOnEnable();
+            _vm.RefreshViewModel(skillId);
         }
-        else if (stringText.text == "+" && IOManager.Instance.playerData.skillPoint >= counter + 1)
+        
+    }
+    private void OnDisable()
+    {
+        if (_vm != null)
         {
-            IOManager.Instance.playerData.skillPoint -= ++counter;
-            
+            _vm.UnRegisterEventsOnDisable();
+            _vm.PropertyChanged -= OnPropertyChanged;
+            _vm = null;
         }
-        else
+    }
+    private void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
+    {
+        switch (e.PropertyName)
         {
-            Debug.Log("스킬포인트 부족 또는 지정스킬은 1미만으로 안내려감.");
+            case nameof(_vm._skillLevel):
+                skillLevelText.text = $"{_vm._skillLevel}";
+                break;
+            case nameof(_vm._id):
+                commentText.text = $"{_vm._name} \n {_vm._skillComment}";
+                break;
         }
+    }
 
-        numberText.text = counter + "";
-        SkillPointText.text = "스킬포인트 : " + IOManager.Instance.playerData.skillPoint;
-        IOManager.Instance.playerData.skillLevel[skillNo] = counter;
 
-        IOManager.Instance.SavePlayerDataToJson();
+    // 자네가 관리하지말고 IO Manager에게 던져주셈 
+    public void ButtonPressed(int skillID, bool isUpgrade)
+    {
+        IOManager.Inst.RequestSkillChange(skillID, isUpgrade);
     }
 }

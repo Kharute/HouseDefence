@@ -16,7 +16,7 @@ public class Result : MonoBehaviour
     {
         for (int i = 0; i < star.Length; i++)
         {
-            star[i].SetActive(IOManager.Instance.playerData.stageCleard[IOManager.Instance.curStage][i]);
+            star[i].SetActive(IOManager.gameData.StageDATA[IOManager.Inst.curStage][i]);
         }
     }
 }

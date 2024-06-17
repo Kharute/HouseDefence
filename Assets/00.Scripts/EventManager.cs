@@ -5,26 +5,19 @@ using UnityEngine.UI;
 
 public class EventManager : MonoBehaviour
 {
+    // load 시, .json에서 특정 값 호출
+    // skillContext 줄여야되거든.
+
     public TextMeshProUGUI skillContext;
     public Canvas[] canvas;
 
     public int stage = -1;
 
-    // Start is called before the first frame update
-    public void StartButtonClick()
-    {   
-        
-    }
-
-    public void OnClick_StartStageScene()
-    {
-        //[TODO - KDH :  Scene -> UI change]
-        SceneManager.LoadScene("StageScene");
-    }
+    
     public void StartStageButtonClick(int stage)
     {
         //IOManager iOManager = IOManager.LoadPlayerDataFromJson();
-        IOManager.Instance.curStage = stage;
+        IOManager.Inst.curStage = stage;
         switch (stage)
         {
             case 0:
@@ -45,10 +38,7 @@ public class EventManager : MonoBehaviour
         
     }
 
-    public void EndButtonClick()
-    {
-        Application.Quit();
-    }
+    
     public void OnMouseStay_Menu()
     {
         Image image = GetComponent<Image>();
@@ -72,6 +62,7 @@ public class EventManager : MonoBehaviour
     {
         GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Skill");
         Image[] background = new Image[gameObjects.Length];
+
         for (int i = 0; i < gameObjects.Length ;i++)
         {
             background[i] = gameObjects[i].GetComponentInChildren<Image>();
