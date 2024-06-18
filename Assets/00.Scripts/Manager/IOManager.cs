@@ -5,6 +5,7 @@ using System.IO;
 using TMPro;
 using System;
 
+[System.Serializable]
 public class GameData
 {
     PlayerData _playerData;
@@ -33,7 +34,7 @@ public class GameData
                 {
                     List<bool> bools = new List<bool>() { false, false, false };
 
-                    _stageData = new Dictionary<int, List<bool>>() { { i, bools } };
+                    _stageData.Add(i, bools);
                 }
             }
             return _stageData;
@@ -107,8 +108,12 @@ public class SkillData
 public class IOManager : MonoBehaviour
 {
     private static IOManager instance = null;
-
     public static GameData gameData = null;
+
+    public static PlayerData playerData = null;
+
+    [SerializeField]
+    public List<SkillData> skillData = null;
 
     private Action<int, int> _skillChangeCallback;
 
@@ -141,16 +146,16 @@ public class IOManager : MonoBehaviour
 
     public void RequestSkillChange(int skillID, bool isUpgrade)
     {
-        var curSkillLevel = gameData.SkillDATA[skillID]._skillLevel;
-        var curSkillPoint = gameData.SkillDATA[skillID]._skillPoint;
+        var curSkillLevel = skillData[skillID]._skillLevel;
+        var curSkillPoint = skillData[skillID]._skillPoint;
 
         if (isUpgrade)
         {
 
             if (curSkillPoint > curSkillLevel)
             {
-                gameData.SkillDATA[skillID]._skillPoint -= curSkillLevel;
-                gameData.SkillDATA[skillID]._skillLevel++;
+                skillData[skillID]._skillPoint -= curSkillLevel;
+                skillData[skillID]._skillLevel++;
             }
             else
             {
@@ -161,8 +166,8 @@ public class IOManager : MonoBehaviour
         {
             if (curSkillLevel > 1)
             {
-                gameData.SkillDATA[skillID]._skillPoint += curSkillLevel;
-                gameData.SkillDATA[skillID]._skillLevel--;
+                skillData[skillID]._skillPoint += curSkillLevel;
+                skillData[skillID]._skillLevel--;
             }
             else
             {
@@ -200,22 +205,29 @@ public class IOManager : MonoBehaviour
 
     public void RefreshSkillInfo(int reqId, Action<string, int, float, int, string> callback)
     {
-        if (gameData.SkillDATA[reqId] != null)
+        /*if (skillData[reqId] != null)
         {
-            var curSkill = gameData.SkillDATA[reqId];
+            var curSkill = skillData[reqId];
             callback.Invoke(curSkill._name, curSkill._skillLevel, curSkill._skillCooltime, curSkill._skillPoint, curSkill._skillComment);
-        }
+        }*/
     }
 
     #endregion
 
     #region Save/Load
+    public void SaveToThisMethod()
+    {
+        SavePlayerDataToJson();
+    }
 
     [ContextMenu("To Json Data")]
-    public static void SavePlayerDataToJson()
+    public void SavePlayerDataToJson()
     {
         // ToJson을 사용하면 JSON형태로 포멧팅된 문자열이 생성된다  
-        string jsonData = JsonUtility.ToJson(gameData, true);
+        //string jsonData = JsonUtility.ToJson(gameData, true);
+        //string jsonData = JsonUtility.ToJson(gameData.SkillDATA, true);
+        skillData = gameData.SkillDATA;
+        string jsonData = JsonUtility.ToJson(skillData.Count);
         // 데이터를 저장할 경로 지정
         string path = Path.Combine(Application.dataPath, "playerData.json");
         // 파일 생성 및 저장
@@ -228,10 +240,17 @@ public class IOManager : MonoBehaviour
         if (gameData == null)
         {
             gameData = new GameData();
-            SavePlayerDataToJson();
+            //SavePlayerDataToJson();
             return;
         }
-        
+
+        /*if (skillData == null)
+        {
+            skillData = gameData.SkillDATA;
+            //SavePlayerDataToJson();
+            return;
+        }*/
+
         string path = Path.Combine(Application.dataPath, "playerData.json");
         string jsonData = File.ReadAllText(path);
 

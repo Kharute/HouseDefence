@@ -38,8 +38,7 @@ public class EventManager : MonoBehaviour
         
     }
 
-    
-    public void OnMouseStay_Menu()
+    public void OnClick_SkillInfo()
     {
         Image image = GetComponent<Image>();
 
@@ -78,5 +77,9 @@ public class EventManager : MonoBehaviour
         {
             skillContext.text = "메테오 \n광역기이다. \n 스킬 레벨당 +3 dmg, 쿨다운 -0.1 sec";
         }
+    }
+    public void OnClick_SaveSkillLevel()
+    {
+        IOManager.Inst.SaveToThisMethod();
     }
 }
